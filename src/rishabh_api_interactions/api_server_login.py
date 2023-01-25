@@ -3,7 +3,8 @@ import sys
 
 
 def main(host, port):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    with sock:
         sock.bind((host, port))
         sock.listen(1)
         conn, addr = sock.accept()

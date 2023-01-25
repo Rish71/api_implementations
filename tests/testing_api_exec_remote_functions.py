@@ -3,14 +3,15 @@ import sys
 from xmlrpc.server import SimpleXMLRPCServer
 
 
-def raise_power(x, y):
-    return x**y
+def floor_divide(x, y):
+    return x//y
 
 
 def exec_remote(server_url, server_port):
     server = SimpleXMLRPCServer((server_url, server_port))
     print("Listening on port {}...".format(server_port))
-    server.register_function(raise_power, 'raise_power')
+    server.register_function(floor_divide, 'floor_divide')
+    server.handle_request()
     server.handle_request()
 
 

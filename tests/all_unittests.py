@@ -28,6 +28,7 @@ class AllTests(unittest.TestCase):
 
         self.assertEqual(api_generateIP.generate_ip('192.168.2.0/31'), self._answer)
         self.assertEqual(api_generateIP.generate_ip('192.0.0/31'), None)
+        self.assertEqual(api_generateIP.generate_ip('192.168.0.0/1'), None)
 
     def test_tcp_handle(self):
         print("Please run api_tcp_server.py on another terminal to test it")
@@ -54,17 +55,22 @@ class AllTests(unittest.TestCase):
         print("Please run testing_api_exec_remote_functions.py file on another terminal ")
         input("Press enter to continue")
 
-        self._result = api_exec_remote_functions.remote_function("http://localhost:8000/", 5, 3)
-        self.assertEqual(self._result, 125)
+        self._result = api_exec_remote_functions.remote_function("http://localhost:8000/", 24, 5)
+        self.assertEqual(self._result, 4)
+
+        print("Please run testing_api_exec_remote_functions.py file on another terminal ")
+        input("Press enter to continue")
+        self._result = api_exec_remote_functions.remote_function("http://localhost:8000/", 5, 0)
+        self.assertEqual(self._result, None)
 
     def test_server_login(self):
         input("Please activate server by running api_server_login.py")
         self._result = testing_api_server_login.client_login("localhost", 50007, 'Rishabh', 'Pallod')
         self.assertEqual(self._result, b"Login successful")
 
-        # input("Please activate server again by running api_server_login.py")
-        # self._result = testing_api_server_login.client_login("localhost", 9999, 'Rishabh', "use")
-        # self.assertEqual(self._result, b'Incorrect user details')
+        input("Please activate server running api_server_login.py")
+        self._result = testing_api_server_login.client_login("localhost", 50007, 'Rishabh', "use")
+        self.assertEqual(self._result, b'Incorrect user details')
 
 
 if __name__ == '__main__':

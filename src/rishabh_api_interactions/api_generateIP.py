@@ -11,7 +11,7 @@ def check(ip_value, network):
         grp = ipaddress.IPv6Network
     try:
         ip_value = grp(ip_value)
-    except (ipaddress.AddressValueError, ValueError,ipaddress.NetmaskValueError):
+    except (ipaddress.AddressValueError, ValueError, ipaddress.NetmaskValueError):
         return None
 
     return ip_value
