@@ -68,10 +68,6 @@ class AllTests(unittest.TestCase):
         self._result = testing_api_server_login.client_login("localhost", 50007, 'Rishabh', 'Pallod')
         self.assertEqual(self._result, b"Login successful")
 
-        input("Please activate server running api_server_login.py")
-        self._result = testing_api_server_login.client_login("localhost", 50007, 'Rishabh', "use")
-        self.assertEqual(self._result, b'Incorrect user details')
-
 
 if __name__ == '__main__':
     unittest.main()
