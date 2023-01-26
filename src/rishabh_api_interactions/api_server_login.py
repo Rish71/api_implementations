@@ -2,7 +2,11 @@ import socket
 import sys
 
 
-def main(host, port):
+def creating_server(host, port):
+    """ Method to activate server and login into it
+    :param host: host to connect
+    :param port: port number to connect
+    """
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     with sock:
         sock.bind((host, port))
@@ -22,4 +26,4 @@ def main(host, port):
 
 
 if __name__ == "__main__":
-    main('localhost', 50007)
+    creating_server('localhost', 50007)

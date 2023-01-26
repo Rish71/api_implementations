@@ -4,7 +4,11 @@ import ipaddress
 
 
 def check(ip_value, network):
-    """ Method to verify IP address network"""
+    """ Method to verify IP address network
+    :arg: user entered ip address
+    :arg: bool obj for Ip version
+    :returns: IP address value or none in case of failure
+    """
     if network:
         grp = ipaddress.IPv4Network
     else:
@@ -18,10 +22,13 @@ def check(ip_value, network):
 
 
 def generate_ip(ip_value):
-    """ Methods generate an itr for a range of ip address"""
-    ip_value = check(ip_value,True)
+    """ Methods generate an itr for a range of ip address
+    :arg: user input ipaddress
+    :returns: Range of ip address and None in case of incorrect input
+    """
+    ip_value = check(ip_value, True)
     if ip_value is None:
-        ip_value = check(ip_value,False)
+        ip_value = check(ip_value, False)
 
     if ip_value is None:
         print("Incorrect Network IP entered")

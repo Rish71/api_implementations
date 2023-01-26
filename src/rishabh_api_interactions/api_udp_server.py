@@ -7,6 +7,7 @@ class server_handler(socketserver.BaseRequestHandler):
     """ The request handler class for the server """
 
     def handle(self):
+        """Method to echo user response"""
         self._data = self.request[0].strip()
         self._socket = self.request[1]
         print("{} wrote: ".format(self.client_address[0]))
@@ -15,7 +16,11 @@ class server_handler(socketserver.BaseRequestHandler):
         return
 
 
-def main():
+def creating_udp_server():
+    """ Method to activate udp server
+        :param: host: Host to connect
+        :param: port: port to connect
+    """
     host, port = "localhost", 9999
 
     with socketserver.UDPServer((host, port), server_handler) as server:
@@ -23,4 +28,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    creating_udp_server()

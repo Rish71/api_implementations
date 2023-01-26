@@ -1,4 +1,5 @@
 LICENSE
+README.md
 pyproject.toml
 setup.cfg
 src/rishabh_api_interactions/__init__.py
