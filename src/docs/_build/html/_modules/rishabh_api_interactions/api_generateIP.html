@@ -35,39 +35,51 @@
 <span class="kn">import</span> <span class="nn">ipaddress</span>
 
 
-<div class="viewcode-block" id="check"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_generateIP.check">[docs]</a><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">ip_value</span><span class="p">,</span> <span class="n">network</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Method to verify IP address network&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">network</span><span class="p">:</span>
-        <span class="n">grp</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Network</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">grp</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv6Network</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">ip_value</span> <span class="o">=</span> <span class="n">grp</span><span class="p">(</span><span class="n">ip_value</span><span class="p">)</span>
-    <span class="k">except</span> <span class="p">(</span><span class="n">ipaddress</span><span class="o">.</span><span class="n">AddressValueError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">NetmaskValueError</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
+<div class="viewcode-block" id="IpGeneration"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_generateIP.IpGeneration">[docs]</a><span class="k">class</span> <span class="nc">IpGeneration</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Class for generation of range of ip addresses &quot;&quot;&quot;</span>
 
-    <span class="k">return</span> <span class="n">ip_value</span></div>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ip</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_input_ip</span> <span class="o">=</span> <span class="n">input_ip</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ip_value</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
 
+<div class="viewcode-block" id="IpGeneration.check"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_generateIP.IpGeneration.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">network</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Method to verify IP address network</span>
+<span class="sd">        :param: user entered ip address</span>
+<span class="sd">        :param: bool obj for Ip version</span>
+<span class="sd">        :returns: IP address value or none in case of failure</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">network</span><span class="p">:</span>
+            <span class="n">grp</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Network</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">grp</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv6Network</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ip_value</span> <span class="o">=</span> <span class="n">grp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_input_ip</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">ipaddress</span><span class="o">.</span><span class="n">AddressValueError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">NetmaskValueError</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="k">return</span></div>
 
-<div class="viewcode-block" id="generate_ip"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_generateIP.generate_ip">[docs]</a><span class="k">def</span> <span class="nf">generate_ip</span><span class="p">(</span><span class="n">ip_value</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Methods generate an itr for a range of ip address&quot;&quot;&quot;</span>
-    <span class="n">ip_value</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">ip_value</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">ip_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">ip_value</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">ip_value</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+<div class="viewcode-block" id="IpGeneration.generate_ip"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_generateIP.IpGeneration.generate_ip">[docs]</a>    <span class="k">def</span> <span class="nf">generate_ip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Methods generate an itr for a range of ip address</span>
+<span class="sd">        :param: user input ipaddress</span>
+<span class="sd">        :returns: Range of ip address and None in case of incorrect input</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ip_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">ip_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect Network IP entered&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ip_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect Network IP entered&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">ipaddr</span> <span class="ow">in</span> <span class="n">ip_value</span><span class="p">:</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ipaddr</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ipaddr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ip_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ipaddr</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">data</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span></div></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">ip_address</span> <span class="ow">in</span> <span class="n">generate_ip</span><span class="p">(</span><span class="s1">&#39;192.168.0.0/24&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ip_address</span> <span class="ow">in</span> <span class="n">IpGeneration</span><span class="p">(</span><span class="s1">&#39;192.168.0.0/24&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">generate_ip</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
 </pre></div>
 

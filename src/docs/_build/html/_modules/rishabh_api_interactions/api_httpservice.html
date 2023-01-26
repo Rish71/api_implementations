@@ -35,25 +35,32 @@
 <span class="kn">import</span> <span class="nn">urllib.request</span>
 
 
-<div class="viewcode-block" id="requesting_info"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_httpservice.requesting_info">[docs]</a><span class="k">def</span> <span class="nf">requesting_info</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">num_char</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Method to fetch info from an url</span>
+<div class="viewcode-block" id="HttpService"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_httpservice.HttpService">[docs]</a><span class="k">class</span> <span class="nc">HttpService</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_response</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="sd">    :param url: string obj containing the URL to be read</span>
-<span class="sd">    :param num_char: int obj containing info of the number of characters to be read</span>
-<span class="sd">    :return: string obj contains data to be returned</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">file</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;URL NOT FOUND!!&quot;</span>
+<div class="viewcode-block" id="HttpService.requesting_info"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_httpservice.HttpService.requesting_info">[docs]</a>    <span class="k">def</span> <span class="nf">requesting_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">http_url</span><span class="p">,</span> <span class="n">num_char</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Method to fetch info from an url</span>
 
-    <span class="n">response</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">num_char</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">response</span></div>
+<span class="sd">        :param http_url: string obj containing the URL to be read</span>
+<span class="sd">        :param num_char: int obj containing info of the number of characters to be read</span>
+
+<span class="sd">        :return: string obj contains data to be returned</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">http_url</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;URL NOT FOUND!!&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">num_char</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_response</span></div></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://sixty-north.com/c/t.txt&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">requesting_info</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">HttpService</span><span class="p">()</span><span class="o">.</span><span class="n">requesting_info</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
 </pre></div>
 
           </div>

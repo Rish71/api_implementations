@@ -39,6 +39,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; The request handler class for the server &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="server_handler.handle"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_udp_server.server_handler.handle">[docs]</a>    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to echo user response&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_socket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> wrote: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client_address</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -47,7 +48,11 @@
         <span class="k">return</span></div></div>
 
 
-<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_udp_server.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="viewcode-block" id="creating_udp_server"><a class="viewcode-back" href="../../rishabh_api_interactions.html#rishabh_api_interactions.api_udp_server.creating_udp_server">[docs]</a><span class="k">def</span> <span class="nf">creating_udp_server</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Method to activate udp server</span>
+<span class="sd">        :param: host: Host to connect</span>
+<span class="sd">        :param: port: port to connect</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">host</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">9999</span>
 
     <span class="k">with</span> <span class="n">socketserver</span><span class="o">.</span><span class="n">UDPServer</span><span class="p">((</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">),</span> <span class="n">server_handler</span><span class="p">)</span> <span class="k">as</span> <span class="n">server</span><span class="p">:</span>
@@ -55,7 +60,7 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+    <span class="n">creating_udp_server</span><span class="p">()</span>
 </pre></div>
 
           </div>

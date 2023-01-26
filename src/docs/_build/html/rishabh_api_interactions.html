@@ -38,9 +38,14 @@
 </section>
 <section id="module-rishabh_api_interactions.api_exec_remote_functions">
 <span id="rishabh-api-interactions-api-exec-remote-functions-module"></span><h2>rishabh_api_interactions.api_exec_remote_functions module<a class="headerlink" href="#module-rishabh_api_interactions.api_exec_remote_functions" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_exec_remote_functions.remote_function">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_exec_remote_functions.</span></span><span class="sig-name descname"><span class="pre">remote_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_exec_remote_functions.html#remote_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_exec_remote_functions.remote_function" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_exec_remote_functions.ExecRemote">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_exec_remote_functions.</span></span><span class="sig-name descname"><span class="pre">ExecRemote</span></span><a class="reference internal" href="_modules/rishabh_api_interactions/api_exec_remote_functions.html#ExecRemote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_exec_remote_functions.ExecRemote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to remotely run floor divide function on a server</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_exec_remote_functions.ExecRemote.remote_function">
+<span class="sig-name descname"><span class="pre">remote_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_exec_remote_functions.html#ExecRemote.remote_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_exec_remote_functions.ExecRemote.remote_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method to remotely access raise power function on the server
 :arg: server_url : Takes the host and port details of server
 :arg: a, b : int objs as input for floor_divide method</p>
@@ -51,32 +56,50 @@
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </section>
 <section id="module-rishabh_api_interactions.api_generateIP">
 <span id="rishabh-api-interactions-api-generateip-module"></span><h2>rishabh_api_interactions.api_generateIP module<a class="headerlink" href="#module-rishabh_api_interactions.api_generateIP" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_generateIP.check">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_generateIP.</span></span><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_generateIP.html#check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_generateIP.check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to verify IP address network</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_generateIP.IpGeneration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_generateIP.</span></span><span class="sig-name descname"><span class="pre">IpGeneration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ip</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_generateIP.html#IpGeneration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_generateIP.IpGeneration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for generation of range of ip addresses</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_generateIP.IpGeneration.check">
+<span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_generateIP.html#IpGeneration.check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_generateIP.IpGeneration.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to verify IP address network
+:param: user entered ip address
+:param: bool obj for Ip version
+:returns: IP address value or none in case of failure</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_generateIP.generate_ip">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_generateIP.</span></span><span class="sig-name descname"><span class="pre">generate_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_generateIP.html#generate_ip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_generateIP.generate_ip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Methods generate an itr for a range of ip address</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_generateIP.IpGeneration.generate_ip">
+<span class="sig-name descname"><span class="pre">generate_ip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_generateIP.html#IpGeneration.generate_ip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_generateIP.IpGeneration.generate_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Methods generate an itr for a range of ip address
+:param: user input ipaddress
+:returns: Range of ip address and None in case of incorrect input</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
 <section id="module-rishabh_api_interactions.api_httpservice">
 <span id="rishabh-api-interactions-api-httpservice-module"></span><h2>rishabh_api_interactions.api_httpservice module<a class="headerlink" href="#module-rishabh_api_interactions.api_httpservice" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_httpservice.requesting_info">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_httpservice.</span></span><span class="sig-name descname"><span class="pre">requesting_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_char</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_httpservice.html#requesting_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_httpservice.requesting_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_httpservice.HttpService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_httpservice.</span></span><span class="sig-name descname"><span class="pre">HttpService</span></span><a class="reference internal" href="_modules/rishabh_api_interactions/api_httpservice.html#HttpService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_httpservice.HttpService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_httpservice.HttpService.requesting_info">
+<span class="sig-name descname"><span class="pre">requesting_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">http_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_char</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_httpservice.html#HttpService.requesting_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_httpservice.HttpService.requesting_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method to fetch info from an url</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> – string obj containing the URL to be read</p></li>
+<li><p><strong>http_url</strong> – string obj containing the URL to be read</p></li>
 <li><p><strong>num_char</strong> – int obj containing info of the number of characters to be read</p></li>
 </ul>
 </dd>
@@ -86,21 +109,36 @@
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </section>
 <section id="module-rishabh_api_interactions.api_server_login">
 <span id="rishabh-api-interactions-api-server-login-module"></span><h2>rishabh_api_interactions.api_server_login module<a class="headerlink" href="#module-rishabh_api_interactions.api_server_login" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_server_login.main">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_server_login.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_server_login.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_server_login.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_server_login.ServerLogin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_server_login.</span></span><span class="sig-name descname"><span class="pre">ServerLogin</span></span><a class="reference internal" href="_modules/rishabh_api_interactions/api_server_login.html#ServerLogin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_server_login.ServerLogin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to create a server login protocol</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_server_login.ServerLogin.creating_server">
+<span class="sig-name descname"><span class="pre">creating_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_server_login.html#ServerLogin.creating_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_server_login.ServerLogin.creating_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to activate server and login into it
+:param host: host to connect
+:param port: port number to connect</p>
+</dd></dl>
+
+</dd></dl>
 
 </section>
 <section id="module-rishabh_api_interactions.api_tcp_server">
 <span id="rishabh-api-interactions-api-tcp-server-module"></span><h2>rishabh_api_interactions.api_tcp_server module<a class="headerlink" href="#module-rishabh_api_interactions.api_tcp_server" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_tcp_server.main">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_tcp_server.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9999</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_tcp_server.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_tcp_server.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_tcp_server.creating_tcp_server">
+<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_tcp_server.</span></span><span class="sig-name descname"><span class="pre">creating_tcp_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9999</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_tcp_server.html#creating_tcp_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_tcp_server.creating_tcp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to activate tcp server
+:param: host: Host to connect
+:param: port: port to connect</p>
+</dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="rishabh_api_interactions.api_tcp_server.server_handler">
@@ -110,7 +148,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="rishabh_api_interactions.api_tcp_server.server_handler.handle">
 <span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_tcp_server.html#server_handler.handle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_tcp_server.server_handler.handle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to echo user response</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -118,9 +157,12 @@
 <section id="module-rishabh_api_interactions.api_udp_server">
 <span id="rishabh-api-interactions-api-udp-server-module"></span><h2>rishabh_api_interactions.api_udp_server module<a class="headerlink" href="#module-rishabh_api_interactions.api_udp_server" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.api_udp_server.main">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_udp_server.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_udp_server.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_udp_server.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="rishabh_api_interactions.api_udp_server.creating_udp_server">
+<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.api_udp_server.</span></span><span class="sig-name descname"><span class="pre">creating_udp_server</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_udp_server.html#creating_udp_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_udp_server.creating_udp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to activate udp server
+:param: host: Host to connect
+:param: port: port to connect</p>
+</dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="rishabh_api_interactions.api_udp_server.server_handler">
@@ -130,18 +172,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="rishabh_api_interactions.api_udp_server.server_handler.handle">
 <span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/api_udp_server.html#server_handler.handle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.api_udp_server.server_handler.handle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to echo user response</p>
+</dd></dl>
 
 </dd></dl>
 
 </section>
-<section id="module-rishabh_api_interactions.main">
-<span id="rishabh-api-interactions-main-module"></span><h2>rishabh_api_interactions.main module<a class="headerlink" href="#module-rishabh_api_interactions.main" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="rishabh_api_interactions.main.main">
-<span class="sig-prename descclassname"><span class="pre">rishabh_api_interactions.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rishabh_api_interactions/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rishabh_api_interactions.main.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<section id="rishabh-api-interactions-main-module">
+<h2>rishabh_api_interactions.main module<a class="headerlink" href="#rishabh-api-interactions-main-module" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="module-rishabh_api_interactions">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rishabh_api_interactions" title="Permalink to this heading">¶</a></h2>

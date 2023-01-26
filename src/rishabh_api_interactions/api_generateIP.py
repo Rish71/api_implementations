@@ -3,44 +3,49 @@
 import ipaddress
 
 
-def check(ip_value, network):
-    """ Method to verify IP address network
-    :arg: user entered ip address
-    :arg: bool obj for Ip version
-    :returns: IP address value or none in case of failure
-    """
-    if network:
-        grp = ipaddress.IPv4Network
-    else:
-        grp = ipaddress.IPv6Network
-    try:
-        ip_value = grp(ip_value)
-    except (ipaddress.AddressValueError, ValueError, ipaddress.NetmaskValueError):
-        return None
+class IpGeneration:
+    """ Class for generation of range of ip addresses """
 
-    return ip_value
+    def __init__(self, input_ip):
+        self._input_ip = input_ip
+        self._ip_value = None
+        self._data = []
 
+    def check(self, network):
+        """ Method to verify IP address network
+        :param: user entered ip address
+        :param: bool obj for Ip version
+        :returns: IP address value or none in case of failure
+        """
+        if network:
+            grp = ipaddress.IPv4Network
+        else:
+            grp = ipaddress.IPv6Network
+        try:
+            self._ip_value = grp(self._input_ip)
+        except (ipaddress.AddressValueError, ValueError, ipaddress.NetmaskValueError):
+            return
+        return
 
-def generate_ip(ip_value):
-    """ Methods generate an itr for a range of ip address
-    :arg: user input ipaddress
-    :returns: Range of ip address and None in case of incorrect input
-    """
-    ip_value = check(ip_value, True)
-    if ip_value is None:
-        ip_value = check(ip_value, False)
+    def generate_ip(self):
+        """ Methods generate an itr for a range of ip address
+        :param: user input ipaddress
+        :returns: Range of ip address and None in case of incorrect input
+        """
+        self.check(True)
+        if self._ip_value is None:
+            self.check(False)
 
-    if ip_value is None:
-        print("Incorrect Network IP entered")
-        return None
+        if self._ip_value is None:
+            print("Incorrect Network IP entered")
+            return None
 
-    data = []
-    for ipaddr in ip_value:
-        data.append(ipaddr)
+        for ipaddr in self._ip_value:
+            self._data.append(ipaddr)
 
-    return data
+        return self._data
 
 
 if __name__ == '__main__':
-    for ip_address in generate_ip('192.168.0.0/24'):
+    for ip_address in IpGeneration('192.168.0.0/24').generate_ip():
         print(ip_address)
