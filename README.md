@@ -1,6 +1,7 @@
 # Api_Implementations
 
 [![Coverage Status](https://coveralls.io/repos/github/Rish71/api_implementations/badge.svg)](https://coveralls.io/github/Rish71/api_implementations)
+[![Documentation Status](https://readthedocs.org/projects/api-implementations/badge/?version=latest)](https://api-implementations.readthedocs.io/en/latest/?badge=latest)
 
 Api_implementaions contains a set of basic server client interacting modules. 
 

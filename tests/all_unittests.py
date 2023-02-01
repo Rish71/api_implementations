@@ -36,8 +36,8 @@ class AllTests(unittest.TestCase):
         self.assertEqual(self._ip_generate.generate_ip(), None)
 
     def test_tcp_handle(self):
-        print("Please run api_tcp_server.py on another terminal to test it")
-        input("Press enter to continue")
+        # print("Please run api_tcp_server.py on another terminal to test it")
+        # input("Press enter to continue")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as self._client:
             self._client.connect(("localhost", 9999))
@@ -47,8 +47,8 @@ class AllTests(unittest.TestCase):
         self.assertEqual(self._received, "Rishabh")
 
     def test_udp_handle(self):
-        print("Please run api_udp_server.py on another terminal to test it")
-        input("Press enter to continue")
+        # print("Please run api_udp_server.py on another terminal to test it")
+        # input("Press enter to continue")
 
         self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self._sock.sendto(bytes("Rishabh", "utf-8"), ("localhost", 9999))
@@ -58,20 +58,20 @@ class AllTests(unittest.TestCase):
 
     def test_exec_remote(self):
         self._remote_obj = api_exec_remote_functions.ExecRemote()
-        print("Please run testing_api_exec_remote_functions.py file on another terminal ")
-        input("Press enter to continue")
+        # print("Please run testing_api_exec_remote_functions.py file on another terminal ")
+        # input("Press enter to continue")
 
         self._result = self._remote_obj.remote_function("http://localhost:8000/", 24, 5)
         self.assertEqual(self._result, 4)
 
-        print("Please run testing_api_exec_remote_functions.py file on another terminal ")
-        input("Press enter to continue")
+        # print("Please run testing_api_exec_remote_functions.py file on another terminal ")
+        # input("Press enter to continue")
 
         self._result = self._remote_obj.remote_function("http://localhost:8000/", 5, 0)
         self.assertEqual(self._result, None)
 
     def test_server_login(self):
-        input("Please activate server by running api_server_login.py")
+        # input("Please activate server by running api_server_login.py")
         self._result = testing_api_server_login.client_login("localhost", 50007, 'Rishabh', 'Pallod')
         self.assertEqual(self._result, b"Login successful")
 
